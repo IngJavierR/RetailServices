@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: eureka-service
+
+server:
+  port: 8000
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+zuul:
+  ignoredServices: '*'
+  prefix: /api
+  routes:
+    project:
+      path: /catalogos/**
+      url: http://localhost:8090
+  ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectionTimeout: 3000

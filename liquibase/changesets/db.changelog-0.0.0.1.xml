@@ -4,14 +4,33 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"> 
-    <!--<changeSet author="authorName" id="changelog-1.0">
-        <createTable tableName="C_PRUEBA">
-            <column name="ID" type="INT">
+    <changeSet author="authorName" id="changelog-1.0">
+        <createTable tableName="users">
+            <column name="id" type="INT">
+                <constraints nullable="true" primaryKey="true" unique="false"/>
+            </column>
+            <column name="ds_name" type="VARCHAR(50)">
                 <constraints nullable="true" primaryKey="false" unique="false"/>
             </column>
-            <column name="DS_NAME" type="VARCHAR(50)">
+            <column name="ds_lastname" type="VARCHAR(50)">
+                <constraints nullable="true" primaryKey="false" unique="false"/>
+            </column>
+            <column name="age" type="INT">
                 <constraints nullable="true" primaryKey="false" unique="false"/>
             </column>
         </createTable>
-    </changeSet>-->
+    </changeSet>
+    <changeSet author="authorName" id="addNotNullConstraint-example">
+        <addNotNullConstraint
+                columnDataType="INT"
+                columnName="id"
+                defaultNullValue="0"
+                tableName="users"/>
+    </changeSet>
+    <changeSet author="liquibase-docs" id="addAutoIncrement-example">
+        <addAutoIncrement 
+            columnDataType="int"
+            columnName="id"
+            tableName="users"/>
+    </changeSet>
 </databaseChangeLog> 

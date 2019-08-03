@@ -39,7 +39,7 @@ cd product-service/
 java -jar product-web/target/*.jar
 
 cd user-service/
-java -jar user-web/target/*.jarjava -jar
+java -jar user-web/target/*.jar
 ```
 Verificar Instalación
 ```

@@ -46,12 +46,12 @@ Verificar Instalación
 http://localhost:8000/
 ```
 Probar
-Desde Api Manager
-http://localhost:8000/api/orders/order/test
-http://localhost:8000/api/products/product/test
-http://localhost:8000/api/users/user/test
+Desde Api Manager  
+http://localhost:8000/api/orders/order/test  
+http://localhost:8000/api/products/product/test  
+http://localhost:8000/api/users/user/test  
 
-Directo a los servicios
-http://localhost:8200/order/test
-http://localhost:8300/product/test
-http://localhost:8100/user/test
+Directo a los servicios  
+http://localhost:8200/order/test  
+http://localhost:8300/product/test  
+http://localhost:8100/user/test  

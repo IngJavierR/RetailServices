@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/unbound
+    url: jdbc:postgresql://postgresdb:5432/unbound
     username: postgres
     password: postgres123
     driver-class-name: org.postgresql.Driver
@@ -20,7 +20,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8000/eureka
+      defaultZone: http://apimanager:8000/eureka
   instance:
     leaseRenewalIntervalInSeconds: 5   
     preferIpAddress: true

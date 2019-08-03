@@ -55,3 +55,17 @@ Directo a los servicios
 http://localhost:8200/order/test  
 http://localhost:8300/product/test  
 http://localhost:8100/user/test  
+
+
+Dockerfile  
+docker build -t api_manager -f Dockerfile-apimanager .
+docker run -d -p 8000:8000 api_manager
+
+docker build -t api_order_service -f Dockerfile-order .
+docker run -d -p 8200:8200 api_order_service
+
+docker build -t api_product_service -f Dockerfile-product .
+docker run -d -p 8300:8300 api_product_service
+
+docker build -t api_user_service -f Dockerfile-user .
+docker run -d -p 8100:8100 api_user_service

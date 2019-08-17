@@ -8,3 +8,8 @@ spring:
     initialization-mode: always
   profiles:
     active: h2db
+
+security:
+  values:
+    secret: Prueba
+    ttl: 3600

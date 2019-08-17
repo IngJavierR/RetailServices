@@ -8,6 +8,14 @@ services:
       - "8000:8000"
     environment:
       - TZ=America/Mexico_City
+  oauthserver:
+    build:
+      context: .
+      dockerfile: "Dockerfile-oauthserver"
+    ports:
+      - "9100:9100"
+    environment:
+      - TZ=America/Mexico_City
   orderservice:
     build:
       context: .

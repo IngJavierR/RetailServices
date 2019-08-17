@@ -3,6 +3,7 @@ package mx.com.example.services.facade.impl;
 import mx.com.example.commons.to.LoginRequestTO;
 import mx.com.example.commons.to.TokenResponseTO;
 import mx.com.example.commons.to.UserTO;
+import mx.com.example.commons.to.ValidateTokenRequestTO;
 import mx.com.example.services.facade.IOauthserverFacade;
 import mx.com.example.services.service.IAuthUserService;
 import mx.com.example.services.service.ITokenService;
@@ -37,5 +38,13 @@ public class OauthserverFacade implements IOauthserverFacade {
         tokenResponse.setScope("");
 
         return tokenResponse;
+    }
+
+    @Override
+    public void validate(ValidateTokenRequestTO validateTokenRequest) {
+
+        authUserService.validateUserExist(validateTokenRequest.getUser());
+
+        tokenService.validateToken(validateTokenRequest.getToken());
     }
 }

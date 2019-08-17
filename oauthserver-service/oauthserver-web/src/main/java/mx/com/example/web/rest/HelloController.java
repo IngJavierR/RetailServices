@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import mx.com.example.commons.to.LoginRequestTO;
 import mx.com.example.commons.to.TokenResponseTO;
 import mx.com.example.commons.to.UserTO;
+import mx.com.example.commons.to.ValidateTokenRequestTO;
 import mx.com.example.services.facade.IOauthserverFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,6 +35,14 @@ public class HelloController {
 
         TokenResponseTO response = IOauthserverFacade.authorize(loginRequest);
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/validate", method = RequestMethod.POST, produces = "application/json")
+    public ResponseEntity authorize(@RequestBody ValidateTokenRequestTO loginRequest) {
+        LOG.info("Se invoca /validate");
+
+        IOauthserverFacade.validate(loginRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET, produces = "application/json")

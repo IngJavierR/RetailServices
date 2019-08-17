@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link rel="stylesheet" href="login.css"/>
+    <title>Login</title>
+</head>
+<body>
+<form action="#" th:action="@{/oauth/authorize}" th:object="${loginRequestTO}" method="POST" class="container">
+    <table>
+        <tr>
+            <img src="icons/Octocat.png" alt="LoginImage" width="200" height="120" />
+        </tr>
+        <tr>
+            <td><input type="text" size=25 th:field="*{clientId}" th:value="${loginRequestTO.clientId}" readonly="readonly" hidden="true" /></td>
+        </tr>
+        <tr>
+            <td><input type="text" size=25 th:field="*{redirectUri}" th:value="${loginRequestTO.redirectUri}" readonly="readonly" hidden="true" /></td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" size=25 th:field="*{user}" required/></td>
+        </tr>
+
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" size=25 th:field="*{password}" required/></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" id="login" value="Login"/></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

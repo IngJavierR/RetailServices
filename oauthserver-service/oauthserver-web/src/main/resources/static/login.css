@@ -1,0 +1,36 @@
+.container{
+    width:100%;
+}
+
+html{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    padding: 30px;
+    margin: 0px auto;
+}
+
+table{
+    width: 100%;
+}
+
+input:required:invalid, input:focus:invalid {
+    border-color: rgb(202, 0, 0);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+input:required:valid {
+    border-color: rgb(20, 59, 187);
+    background-position: right top;
+    background-repeat: no-repeat;
+}

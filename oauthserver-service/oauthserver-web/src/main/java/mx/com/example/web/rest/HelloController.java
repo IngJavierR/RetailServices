@@ -1,10 +1,7 @@
 package mx.com.example.web.rest;
 
 import io.swagger.annotations.Api;
-import mx.com.example.commons.to.LoginRequestTO;
-import mx.com.example.commons.to.TokenResponseTO;
-import mx.com.example.commons.to.UserTO;
-import mx.com.example.commons.to.ValidateTokenRequestTO;
+import mx.com.example.commons.to.*;
 import mx.com.example.services.facade.IOauthserverFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,6 +40,14 @@ public class HelloController {
 
         IOauthserverFacade.validate(loginRequest);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/renew", method = RequestMethod.POST, produces = "application/json")
+    public ResponseEntity authorize(@RequestBody RenewTokenRequestTO renewTokenRequest) {
+        LOG.info("Se invoca /authorize");
+
+        RenewTokenResponseTO renewTokenResponse = IOauthserverFacade.renew(renewTokenRequest);
+        return new ResponseEntity<>(renewTokenResponse, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET, produces = "application/json")

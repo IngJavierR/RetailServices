@@ -28,4 +28,4 @@ eureka:
 security:
   values:
     secret: Prueba
-    ttl: 3600
+    ttl: 20

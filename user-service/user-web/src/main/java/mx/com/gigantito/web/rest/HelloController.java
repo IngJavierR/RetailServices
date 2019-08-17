@@ -29,9 +29,13 @@ public class HelloController {
     IUserFacade IUserFacade;
 
     @RequestMapping(value = "/find", method = RequestMethod.GET, produces = "application/json")
-    public ResponseEntity<List<UserTO>> getAllUsers() {
+    public ResponseEntity<UserTO> getAllUsers() {
         LOG.info("Se invoca /find");
-        List<UserTO> users = this.IUserFacade.getAllUsers();
+        UserTO users = new UserTO();
+        users.setAge(10);
+        users.setLastName("Martinez");
+        users.setName("Pedro");
+        users.setId(1);
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="true">
+
+    <appender user="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param user="ConversionPattern"
+                   value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </layout>
+    </appender>
+
+    <appender user="file" class="org.apache.log4j.RollingFileAppender">
+        <param user="append" value="false" />
+        <param user="maxFileSize" value="10MB" />
+        <param user="maxBackupIndex" value="10" />
+        <param user="file" value="${catalina.home}/logs/oauth-commons.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param user="ConversionPattern"
+                   value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </layout>
+    </appender>
+
+    <root>
+        <level value="DEBUG" />
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+    </root>
+
+</log4j:configuration>

@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    #url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    initialization-mode: always
+  #datasource:
+    #url: jdbc:sqlserver://localhost;databaseName=securitydb
+    #username: sa
+    #password: Axity&2019Arq
+    #driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  #jpa:
+    #database-platform: org.hibernate.dialect.SQLServer2012Dialect
+    #show-sql: true
+  application:
+    name: oauth-service
+  profiles: prod
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${APIMANAGER_SVC_SERVICE_HOST}:${APIMANAGER_SVC_PORT_8000_TCP_PORT}/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 5   
+    preferIpAddress: true
+
+security:
+    values:
+      secret: Prueba
+      ttl: 3600

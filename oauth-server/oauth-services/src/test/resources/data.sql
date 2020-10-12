@@ -1,0 +1,1 @@
+INSERT INTO Security (id, username, password) VALUES (1, 'qwe', '123');

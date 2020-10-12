@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>user</artifactId>
-        <groupId>mx.com.gigantito</groupId>
+        <groupId>mx.com.axity</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>mx.com.gigantito</groupId>
+            <groupId>mx.com.axity</groupId>
             <artifactId>user-services</artifactId>
         </dependency>
         <dependency>
@@ -62,7 +62,8 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>test</scope>
+            <!-- Uncomment this when exist a real database -->
+            <!--<scope>test</scope>-->
         </dependency>
     </dependencies>
 

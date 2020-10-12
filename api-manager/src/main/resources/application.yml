@@ -24,6 +24,15 @@ zuul:
     oauth:
       path: /oauth/**
       serviceId: oauth-service
+    order:
+      path: /order/**
+      serviceId: order-service
+    product:
+      path: /product/**
+      serviceId: product-service
+    user:
+      path: /user/**
+      serviceId: user-service
   ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 600000
 ribbon:

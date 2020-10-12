@@ -10,17 +10,18 @@ spring:
     show-sql: true
   application:
     name: user-service
-  profiles: dev
+  profiles: 
+    detaulf: dev
 
 server:
   port: 8010
 
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      defaultZone: http://${APIMANAGER_SVC_SERVICE_HOST}:${APIMANAGER_SVC_PORT_8000_TCP_PORT}/eureka
+      defaultZone: http://localhost:8000/eureka
   instance:
     leaseRenewalIntervalInSeconds: 5
     preferIpAddress: true

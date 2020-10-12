@@ -14,34 +14,37 @@ _Para la instalación se necesita:_
 * [Maven](http://maven.apache.org/download.cgi)  
 * [Docker](https://docs.docker.com/install/)  
 
-## Compilción  
+## Compilación  
 
 _Como compilar el proyecto_
 
-´´´bash
+```bash
 mvn clean package -f api-manager
 mvn clean package -f oauth-server
 mvn clean package -f order-service
 mvn clean package -f product-service
 mvn clean package -f user-service
-´´´
+```
 
 ## Ejecución  
 
 _Como ejecutar el proyecto_
 
+```bash
 java -jar api-manager/target/*.jar
 java -jar oauth-server/oauth-web/target/*.jar
 java -jar order-service/order-web/target/*.jar
 java -jar product-service/product-web/target/*.jar
 java -jar user-service/user-web/target/*.jar
+```
 
+```bash
 Puerto ApiManager: 8000
 Puerto OAuthServer: 8090
 Puerto OrderService: 8020
 Puerto ProductService: 8030
 Puerto UserService: 8010
-
+```
 
 ## Ejemplos de uso directo a servicios
 

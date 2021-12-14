@@ -19,7 +19,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <snapshot.version>1.0-SNAPSHOT</snapshot.version>
-        <log4jcore.version>2.10.0</log4jcore.version>
+        <log4jcore.version>2.16.0</log4jcore.version>
         <log4japi.version>2.10.0</log4japi.version>
         <aspectj.version>1.5.4</aspectj.version>
         <model.mapper.version>1.0.0</model.mapper.version>
